@@ -5,7 +5,6 @@ public class Homework extends SuperKarel {
     private int steps = 0;
     private int width = 0;
     private int height = 0;
-    private int beepers = 0;
 
     private void setWidth(){
         width = calculate();
@@ -16,6 +15,7 @@ public class Homework extends SuperKarel {
     }
 
     public void run() {
+        steps = 0;
         setWidth();
         setHeight();
         setBeepersInBag(1000);
@@ -142,13 +142,11 @@ public class Homework extends SuperKarel {
             drawHorizontalWhenEven();
             drawVerticalWhenOdd();
         }
-        System.out.println("Beepers: " + beepers);
     }
 
     public void put(){
         if (noBeepersPresent()){
             putBeeper();
-            beepers++;
         }
     }
 
@@ -190,7 +188,6 @@ public class Homework extends SuperKarel {
             n++;
             count = 2;
             pickBeeper();
-            beepers--;
         }
         while (frontIsClear()) {
             moveWithCalculation();
