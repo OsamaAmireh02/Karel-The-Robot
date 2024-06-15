@@ -43,6 +43,16 @@ public class Homework extends SuperKarel {
         put();
     }
 
+    private void putDouble() {
+        put();
+        turnRight();
+        moveWithCalculation();
+        put();
+        turnAround();
+        moveWithCalculation();
+        turnRight();
+    }
+
     private void twoWithFiveCase(int s) {
         turnLeft();
         moveWithCalculation();
@@ -187,16 +197,6 @@ public class Homework extends SuperKarel {
         turnLeft();
     }
 
-    private void putDouble() {
-        put();
-        turnRight();
-        moveWithCalculation();
-        put();
-        turnAround();
-        moveWithCalculation();
-        turnRight();
-    }
-
     public void run() {
         steps = 0;
         setWidth();
@@ -240,6 +240,7 @@ public class Homework extends SuperKarel {
                 moveWithCalculation();
                 turnAround();
             } else if (height == 4) {
+                put();
                 for (int i = 0; i < 2; i++) {
                     moveWithCalculation();
                     turnLeft();
@@ -251,15 +252,13 @@ public class Homework extends SuperKarel {
                 turnRight();
                 moveWithCalculation();
                 turnAround();
+                put();
             } else if (height == 5) {
                 twoWithFiveCase(1);
             } else if (height > 5) {
-                put();
-                moveWithCalculation();
-                put();
-                turnAround();
-                moveWithCalculation();
-                turnRight();
+                turnLeft();
+                if (height != 7)
+                    putDouble();
                 OneOrTwoWithMoreThanFourCases(height, 2);
                 turnRight();
                 moveWithCalculation();
@@ -280,23 +279,28 @@ public class Homework extends SuperKarel {
                 moveWithCalculation();
                 turnAround();
             } else if (width == 4) {
+                put();
+                moveWithCalculation();
                 moveWithCalculation();
                 put();
+                turnLeft();
                 moveWithCalculation();
                 turnLeft();
                 moveWithCalculation();
-                if (width == 3) {
-                    turnLeft();
-                    put();
-                    moveWithCalculation();
-                } else put();
+                put();
+                turnAround();
+                moveWithCalculation();
+                moveWithCalculation();
+                put();
+                turnAround();
             } else if (width == 5) {
                 twoWithFiveCase(0);
             } else if (width > 5) {
                 turnLeft();
                 moveWithCalculation();
                 turnRight();
-                putDouble();
+                if (width != 7)
+                    putDouble();
                 OneOrTwoWithMoreThanFourCases(width, 2);
                 turnAround();
             }
